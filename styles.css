@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Grand+Hotel&display=swap");
 
 /* 
-=============
+=======================================
 Variables
-============
+========================================
 */
 
 :root {
@@ -13,8 +13,8 @@ Variables
   --clr-grey-5: #617d98;
   --clr-grey-10: #f1f5f8;
   --clr-white: #fff;
-  --ff-primary: "Catamaran, sans-serif;";
-  --ff-secondary: "Grand Hotel, cursive";
+  --ff-primary: "Catamaran", sans-serif;
+  --ff-secondary: "Grand Hotel", cursive;
   --transition: all 0.3s linear;
   --spacing: 0.25rem;
   --radius: 0.5rem;
@@ -103,7 +103,11 @@ p {
   }
 }
 
-/* Gloable CSS */
+/* 
+========================================
+Gloable CSS
+=========================================
+*/
 .btn {
   color: var(--clr-white);
   background: var(--clr-primary);
@@ -123,10 +127,40 @@ p {
   color: var(--clr-primary);
   background: var(--clr-primary-light);
 }
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.section-title h3 {
+  color: var(--clr-primary);
+  font-family: var(--ff-secondary);
+}
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+.section-center {
+  width: 85vw;
+  margin: 0 auto;
+  padding: 4rem 0;
+  max-width: 1175px;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+    padding: 4rem 1rem;
+  }
+}
 /* 
-=============
+===========================================
 Header
-============
+==========================================
 */
 header {
   min-height: 100vh;
@@ -168,16 +202,20 @@ header {
   }
 }
 
-/* Content Divider */
+/* 
+===========================================
+Content Divider
+===========================================
+*/
 hr {
   height: 0.5rem;
   background: linear-gradient(to left, var(--clr-primary), #e9b949, var(--clr-primary));
 }
 
 /* 
-=============
+===========================================
 Services
-=============
+===========================================
 */
 
 .service-section {
@@ -214,14 +252,62 @@ Services
   transform: translateY(-5px);
 }
 
+/* Service layout on Tablet */
 @media screen and (min-width: 570px) {
   .service {
     float: left;
     width: 50%;
   }
 }
+
+/* Service layout on Laptop and Desktop */
 @media screen and (min-width: 1200px) {
   .service {
     width: 25%;
+  }
+}
+
+/* 
+==========================================
+About
+==========================================
+*/
+
+.about-img,
+.about-info {
+  padding: 2rem 0;
+}
+
+figure {
+  background: var(--clr-primary);
+  border: 0.5rem solid var(--clr-primary);
+  max-width: 30rem;
+  overflow: hidden;
+}
+
+[alt*="Bull"] {
+  /* border-radius: 3rem; */
+  transition: var(--transition);
+}
+
+figure:hover [alt*="Bull"] {
+  opacity: 0.7;
+  transform: scale(1.2);
+}
+
+.about-text {
+  color: var(--clr-grey-5);
+  max-width: 26rem;
+}
+
+@media screen and (min-width: 992px) {
+  .about-img,
+  .about-info {
+    float: left;
+    width: 50%;
+  }
+
+  .about-info {
+    padding-left: 2rem;
   }
 }
