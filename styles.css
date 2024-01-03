@@ -282,12 +282,12 @@ figure {
   background: var(--clr-primary);
   border: 0.5rem solid var(--clr-primary);
   max-width: 30rem;
-  /* max-height: 25rem; */
+  max-height: 21rem;
   overflow: hidden;
 }
 
 [alt*="Bull"] {
-  /* object-fit: cover; */
+  object-fit: cover;
   transition: var(--transition);
 }
 
